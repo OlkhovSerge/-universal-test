@@ -6,14 +6,20 @@ class Quiz extends Component {
     state = {
         quiz: [
             {
+                question: 'При движении на легковом автомобиле, оборудованном ремнями безопасности, кто должен быть пристегнут ?',
+                rightAnswerId: 3,
                 answers: [
-                    {text: 'Вопрос 1'},
-                    {text: 'Вопрос 2'},
-                    {text: 'Вопрос 3'},
-                    {text: 'Вопрос 4'}
+                    {text: 'Только водитель', id: 1},
+                    {text: 'Водитель и пассажир на переднем сиденье', id: 2},
+                    {text: 'Все лица, находящиеся в автомобиле', id: 3},
+                    {text: 'Только мой кот', id: 4}
                 ]
             }
         ]
+    }
+
+    onAnswerClickHandler = answerId => {
+
     }
 
     render() {
@@ -23,6 +29,8 @@ class Quiz extends Component {
                     <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz
                         answers={ this.state.quiz[0].answers }
+                        question={ this.state.quiz[0].question }
+                        onAnswerClick={ this.onAnswerClickHandler }
                     />
                 </div>
             </div>
